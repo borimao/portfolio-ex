@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    height: 100vh;
+}
+body{
+    font-size: 1.6rem;
+    height: 100vh;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+}
+
+.main{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0; //スマホのとき
+}
+.cover{
+    height: 700vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    div {
+        min-height: calc(100% / 7);
+        height: auto;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        button{
+            height: 6rem;
+            width: 6rem;
+            font-size: 5rem;
+            background-color: #fff;
+            border: solid 0.1rem #000;
+            border-radius: 50%;
+            z-index: 2;
+            position: absolute;
+            text-align: center;
+            bottom: 4rem;
+        }
+        video{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            min-width: 100vw;
+            min-height: 100vh;
+            width: auto;
+            height: auto;
+            z-index: -998;
+            background-size: cover;
+        }
+    }
+    transition: 1.5s;
+}
+@for $num from 1 to 8 {
+    .c_#{$num} {
+        top: -100vh * $num + 100vh
+    }
+}
+@for $num  from 1 to 8 {
+    .in_cover#{$num} {
+        section{
+            opacity: 1;
+            transition: 1s
+        }
+    }
+}
+.on{
+    section{
+        opacity: 1;
+    }
+}
+
+.in_cover1{
+    section{
+        h1 {
+            font-size: 80px;
+        }
+    }
+}
+.in_cover2{
+    section{
+        text-align: center;
+        width: 100rem;
+        header {
+            height: 60px;
+            font-size: 5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        .work{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            pointer-events : none;
+            position: static;
+            .img_area {
+                width: calc(50% - 2rem);
+                height: auto;
+                padding: 1rem;
+                pointer-events:auto;
+                transition: 0.5s;
+                .img1{
+                    width: 100%;
+                    height: auto;
+                    transition: 0.5s;
+                }
+                .img2{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    opacity: 0;
+                    transition: 0.5s;
+                }
+                a{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 4em;
+                    text-decoration: none;
+                    font-weight: bold;
+                    transition: 0.5s;
+                    color: rgba(0, 0, 0, 0)
+                }
+                &:hover > a{
+                    background: rgba(0, 0, 0, 0);
+                    color: #fff;
+                }
+                &:hover > .img2{
+                    opacity: 1;
+                }
+            }
+            .back_image{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -999;
+                opacity: 0;
+                transition: 1s;
+                img{
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    min-width: 100vw;
+                    min-height: 100vh;
+                    width: auto;
+                    height: auto;
+                    background-size: cover;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+    background: rgb(0, 0, 0);
+    pointer-events : none;
+    transition: 0.5s;
+}
+
+@for $num from 1 to 5 {
+    #img_area#{$num}:hover + #b_image#{$num} {
+        opacity: 1;
+    }
+}
+.in_cover2:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+.work:hover > .img_area > .img1{
+    opacity: 0.4;
+}
+
+.button_list{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    section{
+        button{
+            display: block;
+            height: 30px;
+            width: 30px;
+            font-size: 20px;
+            background-color: #fff;
+            border: solid 1px #000;
+            border-radius: 50%;
+            margin: 10px;
+    }
+    }
+}
+
+
+.center{
+    height: 100vh;
+}
+.up,.down{
+    height: 100px;
+}
+
+@media screen and (max-width:480px){
+    .main{
+        overflow: scroll;
+    }
+    .cover{
+        top: 0;
+    }
+
+    .in_cover2 section .work .img_area {
+        width: calc(100% - 2rem);
+    }
+   
+} 
+
+@media screen and (max-height:630px){
+    .main{
+        overflow: scroll;
+    }
+    .cover{
+        top: 0;
+    }
+}
+    

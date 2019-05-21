@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.container .area {
+  height: calc(100vh - 2px);
+  background-color: red;
+  border: solid 1px #000;
+}
+/*# sourceMappingURL=demo2.css.map */
