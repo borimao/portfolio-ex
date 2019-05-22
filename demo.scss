@@ -65,7 +65,7 @@ button{
             min-height: 100vh;
             width: auto;
             height: auto;
-            z-index: -998;
+            z-index: -999;
             background-size: cover;
         }
     }
@@ -101,11 +101,13 @@ button{
     section{
         text-align: center;
         width: 100rem;
+        pointer-events : none;
         header {
             height: 60px;
             font-size: 5rem;
             font-weight: bold;
-            color: #fff;
+            color: #000;
+            transition: 0.5s;
         }
         .work{
             width: 100%;
@@ -164,7 +166,7 @@ button{
                 left: 0;
                 width: 100%;
                 height: 100%;
-                z-index: -999;
+                z-index: -998;
                 opacity: 0;
                 transition: 1s;
                 img{
@@ -178,12 +180,109 @@ button{
                     background-size: cover;
                     overflow: hidden;
                 }
+                .shadow{
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.4);
+                }
+            }
+            .nomal_back{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -999;
+                background-color: rgb(255, 255, 255);
             }
         }
+        &:hover > header{
+            color: #fff;
+        }
     }
-    background: rgba(0, 0, 0, 0.4);
-    pointer-events : none; 
+    background: rgba(0, 0, 0, 0);
     transition: 0.5s;
+    .w_back{
+        position: absolute;
+        top: 0;
+        left: 100vw;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: 0.5s;
+        .w_area{
+            width: 100rem;
+            margin: 2rem;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            display: inline;
+            z-index: 1;
+            .content {
+                width: 100%;
+                height: 53rem;
+                margin: 0;
+                .videos{
+                    display: inline;
+                    width: 70%;
+                    .frame-area{
+                        position: relative;
+                        width: 100%;
+                        height: 0;
+                        padding-bottom: 56.25%;
+                        overflow: hidden;
+                        iframe {
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                        }
+                    }
+                    .w-title{
+                        width: 100%;
+                        height: 15rem;
+                        line-height: 15rem;
+                        font-size: 5rem;
+                    }
+                }
+                .desc{
+                    width: 30%;
+                    height: calc(100% - 2rem);
+                    margin: 0 1rem 0 1rem;
+                    justify-content: left;
+                    align-items: unset;
+                    overflow: scroll;
+                }
+            }
+            .close_link{
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 5rem;
+                height: 5rem;
+                line-height: 5rem;
+                text-decoration: none;
+                background-color: rgba(0, 0, 0, 0.6);
+                color: #fff;
+
+            }
+        }
+        .close_area{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 0;
+        }
+    }
+    .viw_work{
+        left: 0;
+    }
 }
 
 @for $num from 1 to 5 {
@@ -217,7 +316,7 @@ button{
             border: solid 1px #000;
             border-radius: 50%;
             margin: 10px;
-    }
+        }
     }
 }
 
@@ -229,7 +328,23 @@ button{
     height: 100px;
 }
 
-@media screen and (max-width:480px){
+.m_scroll{
+    overflow: scroll;
+    .cover div button {
+        display: none;
+    }
+}
+.delete{
+    display: none;
+}
+
+@media screen and (max-width:1024px){
+    button {
+        display: none;
+    }
+    .button_list {
+        display: none;
+    }
     .main{
         overflow: scroll;
     }
@@ -238,10 +353,49 @@ button{
     }
 
     .in_cover2 section .work .img_area {
-        width: calc(100% - 2rem);
+        width: calc(100% - 20%);
+    }
+    
+    .in_cover2 .w_back {
+        position: fixed;
+        .w_area {
+            .content {
+                height: calc(100vh - 10vh);
+                display: inline; 
+                .videos {
+                    width: 100%;
+                    .w-title {
+                        height: 10rem;
+                        line-height: 10rem;
+                    }
+                }
+                .desc{
+                    width: calc(100% - 2rem);
+                    max-height: 20rem;
+                    margin: 1rem 1rem 1rem 1rem;
+                }
+            }
+        }
     }
    
 } 
+
+@media screen and (max-width:414px){
+    .in_cover2 .w_back .w_area .content .videos .w-title {
+        font-size: 2.5rem;
+        height: 5rem;
+        line-height: 5rem;
+    }
+    .in_cover2 .w_back .w_area .content .desc {
+        max-height: 30rem;
+    }
+}
+
+@media screen and (min-height:1000px){
+    .in_cover2 .w_back .w_area .content .desc {
+        max-height: 30rem
+    }
+}
 
 @media screen and (max-height:630px){
     .main{
