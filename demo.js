@@ -36,6 +36,12 @@ window.onload = ()=>{
         main.classList.add('m_scroll');
         var b_list = document.querySelector(".button_list");
         b_list.classList.add('delete');
+        var up = document.querySelector('.up');
+        up.parentNode.removeChild(up);
+        var center = document.querySelector('.center');
+        center.parentNode.removeChild(center);
+        var down = document.querySelector('.down');
+        down.parentNode.removeChild(down);
     }
 }
 
