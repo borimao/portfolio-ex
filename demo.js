@@ -27,7 +27,6 @@ window.onload = ()=>{
     const rect = myMain.getBoundingClientRect();
     const scrollTop = window.pageXOffset || document.documentElement.scrollTop;
     const Top = rect.top + scrollTop;
-    console.log('pokotin')
     window.scrollTo({
         top: Top
     });
