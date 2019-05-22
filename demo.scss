@@ -43,6 +43,7 @@ button{
         justify-content: center;
         align-items: center;
         position: relative;
+        overflow: hidden;
         button{
             height: 6rem;
             width: 6rem;
@@ -50,10 +51,11 @@ button{
             background-color: #fff;
             border: solid 0.1rem #000;
             border-radius: 50%;
-            z-index: 2;
+            z-index: 3;
             position: absolute;
             text-align: center;
             bottom: 4rem;
+            pointer-events:auto;
         }
         video{
             position: absolute;
@@ -126,7 +128,8 @@ button{
                     position: absolute;
                     top: 0;
                     left: 0;
-                    width: 100%;
+                    width: calc(100% - 2rem);
+                    margin: 1rem;
                     opacity: 0;
                     transition: 0.5s;
                 }
@@ -134,8 +137,9 @@ button{
                     position: absolute;
                     top: 0;
                     left: 0;
-                    width: 100%;
-                    height: 100%;
+                    width: calc(100% - 2rem);
+                    height: calc(100% - 2rem);
+                    margin: 1rem;
                     background: rgba(0, 0, 0, 0);
                     display: flex;
                     justify-content: center;
@@ -167,8 +171,8 @@ button{
                     position: absolute;
                     right: 0;
                     bottom: 0;
-                    min-width: 100vw;
-                    min-height: 100vh;
+                    min-width: 100%;
+                    min-height: 100%;
                     width: auto;
                     height: auto;
                     background-size: cover;
@@ -177,8 +181,8 @@ button{
             }
         }
     }
-    background: rgb(0, 0, 0);
-    pointer-events : none;
+    background: rgba(0, 0, 0, 0.4);
+    pointer-events : none; 
     transition: 0.5s;
 }
 
@@ -187,11 +191,12 @@ button{
         opacity: 1;
     }
 }
-.in_cover2:hover {
-    background: rgba(0, 0, 0, 0.4);
-}
 .work:hover > .img_area > .img1{
-    opacity: 0.4;
+    opacity: 0.2;
+}
+
+.work:hover > .img_area > .img1 ~ a{
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .button_list{
