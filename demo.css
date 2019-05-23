@@ -841,9 +841,6 @@ button {
   .in_cover2 .w_back .w_area .content .desc {
     min-height: 30rem;
   }
-}
-
-@media screen and (min-height: 1300px) {
   .in_cover3 section .skils_area .s_link .s_area .s_name {
     font-size: 6.5rem;
   }

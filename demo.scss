@@ -640,9 +640,6 @@ button{
     .in_cover2 .w_back .w_area .content .desc {
         min-height: 30rem
     }
-}
-
-@media screen and (min-height:1300px){
     .in_cover3{
         section{
             header {
@@ -679,6 +676,7 @@ button{
         }
     }
 }
+
 
 @media screen and (max-height:630px){
     .main{
