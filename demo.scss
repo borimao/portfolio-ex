@@ -99,6 +99,7 @@ button{
     }
 }
 .in_cover2{
+    
     section{
         text-align: center;
         width: 100rem;
@@ -200,7 +201,11 @@ button{
                 width: 100%;
                 height: 100%;
                 z-index: -999;
-                background-color: rgb(255, 255, 255);
+                background-color: rgb(160, 193, 255);
+                transition: 0.5s;
+            }
+            &:hover > .nomal_back {
+                background-color: #fff;
             }
         }
         &:hover > header{
@@ -218,6 +223,7 @@ button{
         height: 100%;
         background-color: rgba(255, 255, 255, 0.5);
         transition: 0.5s;
+        z-index: 999;
         .w_area{
             width: 100rem;
             margin: 2rem;
@@ -257,13 +263,22 @@ button{
                 }
                 .desc{
                     width: 30%;
-                    height: calc(100% - 2rem);
-                    margin: 0 1rem 0 1rem;
+                    height: calc(100%);
+                    margin: 0 ;
                     box-shadow:0px 0px 8px 3px #ccc inset;
                     justify-content: left;
                     align-items: unset;
                     overflow: scroll;
                     -webkit-overflow-scrolling: touch
+                }
+                ::-webkit-scrollbar {
+                    -webkit-appearance: none;
+                    width: 7px;
+                }
+                ::-webkit-scrollbar-thumb {
+                    border-radius: 4px;
+                    background-color: rgba(0,0,0,.5);
+                    box-shadow: 0 0 1px rgba(255,255,255,.5);
                 }
             }
             .close_link{
@@ -290,6 +305,96 @@ button{
     }
     .viw_work{
         left: 0;
+    }
+}
+.in_cover3{
+    section{
+        header {
+            height: 60px;
+            font-size: 5rem;
+            font-weight: bold;
+            color: #000;
+            text-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+            text-align: center;
+        }
+        .skils_area{
+            width: 100rem;
+            height: 50rem;
+            .s_link{
+                position: absolute;
+                width: calc((100% / 4) - (100% / 20));
+                height: calc((100% / 2) - (100% / 10));
+                margin: 2.5rem;
+                background-color: rgb(253, 177, 177);
+                transition: 0.5s;
+                .s_area {
+                    display: inline;
+                    text-align: center;
+                    width: 57rem;
+                    opacity: 0;
+                    transition: 0.5s;
+                    .s_name {
+                        font-size: 7rem;
+                        text-decoration: underline;
+                    }
+                    .s_time {
+                        margin-bottom: 2rem;
+                    }
+                    .s_desc {
+                        text-align: left;
+                        margin-bottom: 2rem;
+                    }
+                }
+                .s_area_view {
+                    opacity: 1;
+                }
+                a {
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    text-decoration: none;
+                    color: #000;
+                    font-size: 2.5rem;
+                    transition: 0.5s;
+                    white-space: nowrap;
+                }
+                &:hover {
+                    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+                }
+            }
+            @for $num from 1 to 5 {
+                .s_link#{$num} {
+                    top: 0;
+                    left: calc((25% * #{$num}) - 25%);
+                }
+            }
+            @for $num from 5 to 9 {
+                .s_link#{$num} {
+                    top: 50%;
+                    left: calc((25% * (#{$num} - 4) - 25%));
+                }
+            }
+            .skill_viw{
+                top: 0;
+                left: 0;
+                margin: 2.5rem;
+                width: calc(100% - 5rem);
+                height: calc(100% - 5rem);
+                a {
+                    color: rgb(170, 170, 170);
+                    font-size: 16rem;
+                    opacity: 0.2;
+                }
+            }
+            .s_over {
+                z-index: 2;
+            }
+        }
     }
 }
 
@@ -374,14 +479,128 @@ button{
                 .videos {
                     width: 100%;
                     .w-title {
-                        height: 6rem;
-                        line-height: 6rem;
+                        height: 8rem;
+                        line-height: 8rem;
                     }
                 }
                 .desc{
-                    width: calc(100% - 2rem);
+                    width: calc(100%);
                     max-height: 20rem;
-                    margin: 1rem 1rem 1rem 1rem;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    @for $num from 1 to 5 {
+        #img_area#{$num}:hover + #b_image#{$num} {
+            opacity: 0;
+        }
+    }
+    .work:hover > .img_area > .img1{
+        opacity: 1;
+    }
+    .work:hover > .img_area > .img1 ~ a{
+        background: rgba(0, 0, 0, 0);
+    }
+    .in_cover2 section:hover > header {
+        color: #000;
+        text-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+    }
+
+    .in_cover3{
+        section{
+            header {
+            }
+            .skils_area{
+                width: 45vh;
+                height: 90vh;
+                .s_link{
+                    position: absolute;
+                    width: calc((100% / 2) - 2rem);
+                    height: calc((100% / 4) - 2rem);
+                    margin: 1rem;
+                    background-color: rgb(253, 177, 177);
+                    transition: 0.5s;
+                    .s_area {
+                        display: inline;
+                        text-align: center;
+                        width: 90%;
+                        opacity: 0;
+                        transition: 0.5s;
+                        .s_name {
+                            font-size: 2.5rem;
+                            text-decoration: underline;
+                        }
+                        .s_time {
+                            margin-bottom: 2rem;
+                        }
+                        .s_desc {
+                            text-align: left;
+                            margin-bottom: 2rem;
+                        }
+                    }
+                    .s_area_view {
+                        opacity: 1;
+                    }
+                    a {
+                        position: absolute;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        text-decoration: none;
+                        color: #000;
+                        font-size: 1.5rem;
+                        transition: 0.5s;
+                        white-space: nowrap;
+                    }
+                    &:hover {
+                        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+                    }
+                }
+
+                @for $num from 1 to 3 {
+                    .s_link#{$num} {
+                        top: 0;
+                        left: calc((50% * #{$num}) - 50%);
+                    }
+                }
+                @for $num from 3 to 5 {
+                    .s_link#{$num} {
+                        top: 25%;
+                        left: calc((50% * #{$num}) - 150%);
+                    }
+                }
+                @for $num from 5 to 7 {
+                    .s_link#{$num} {
+                        top: 50%;
+                        left: calc((50% * #{$num}) - 250%);
+                    }
+                }
+                @for $num from 7 to 9 {
+                    .s_link#{$num} {
+                        top: 75%;
+                        left: calc((50% * #{$num}) - 350%);
+                    }
+                }
+                .skill_viw{
+                    top: 0;
+                    left: 0;
+                    margin: 1rem;
+                    width: calc(100% - 2rem);
+                    height: calc(100% - 2rem);
+                    a {
+                        color: rgb(170, 170, 170);
+                        font-size: 5rem;
+                        opacity: 0.2;
+                    }
+                }
+                .s_over {
+                    z-index: 2;
                 }
             }
         }
@@ -419,7 +638,45 @@ button{
         margin: 5rem;
     }
     .in_cover2 .w_back .w_area .content .desc {
-        max-height: 30rem
+        min-height: 30rem
+    }
+}
+
+@media screen and (min-height:1300px){
+    .in_cover3{
+        section{
+            header {
+            }
+            .skils_area{
+                .s_link{
+                    .s_area {
+                        .s_name {
+                            font-size: 6.5rem;
+                        }
+                        .s_time {
+                            font-size: 3rem;
+                        }
+                        .s_desc {
+                            font-size: 3rem;
+                        }
+                        .s_use {
+                            font-size: 3rem;
+                        }
+                    }
+                    a {
+                        font-size: 3.5rem;
+                        transition: 0.5s;
+                    }
+                }
+                .skill_viw{
+                    a {
+                        color: rgb(170, 170, 170);
+                        font-size: 10rem;
+                        opacity: 0.2;
+                    }
+                }
+            }
+        }
     }
 }
 

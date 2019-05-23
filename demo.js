@@ -85,3 +85,31 @@ function CloseWork(){
     const w_area = document.querySelector('.w_back');
     w_area.classList.remove('viw_work');
 }
+
+function SkillViw(num) {
+    const s_toggle = document.querySelector('#s_toggle' + num);
+    s_toggle.removeAttribute('onclick');
+    const s_link = document.querySelector('.s_link' + num);
+    s_link.classList.add('s_over');
+    s_link.classList.add('skill_viw');
+    window.setTimeout(() => {
+        s_link.firstElementChild.classList.add('s_area_view');
+        window.setTimeout(() => {
+            s_toggle.setAttribute('onclick', 'CloseSkill('+ num +')');
+        },500)
+    },500)
+}
+
+function CloseSkill(num){
+    const s_toggle = document.querySelector('#s_toggle' + num);
+    s_toggle.removeAttribute('onclick');
+    const s_link = document.querySelector('.s_link' + num);
+    s_link.firstElementChild.classList.remove('s_area_view');
+    window.setTimeout(() => {
+        s_link.classList.remove('skill_viw');
+        window.setTimeout(() => {
+            s_link.classList.remove('s_over');
+            s_toggle.setAttribute('onclick', 'SkillViw('+ num +')');
+        },500)
+    },500)
+}
