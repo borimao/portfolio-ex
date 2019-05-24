@@ -1,4 +1,4 @@
-var now_num = 1;
+var now_num = 0;
 var timeoutId;
 var scroll = 100;
 var flag = true;
@@ -10,11 +10,16 @@ var chrome
 function sr(num){
     if(now_num != num){
         var cover = document.querySelector('.cover');
+        var parallax = document.querySelector('.parallax');
         cover.classList.add("c_" + num);
         cover.classList.remove("c_" + now_num);
+        parallax.classList.add("p_" + num);
+        parallax.classList.remove("p_" + now_num);
         document.querySelector('.in_cover' + now_num).classList.remove("on");
+        document.querySelector('.b_' + now_num).classList.remove('b_on');
         window.setTimeout(() => {
             document.querySelector('.in_cover' + num).classList.add("on");
+            document.querySelector('.b_' + num).classList.add('b_on');
         },1000);
         now_num = num;
     }
@@ -49,14 +54,14 @@ window.onscroll = () => {
     if(chrome == true){
         scroll = document.documentElement.scrollTop || document.body.scrollTop;
     
-        if(scroll > 100 && flag == true && now_num < 7){
+        if(scroll > 100 && flag == true && now_num < 4){
             console.log(scroll)
             flag = false;
             sr(now_num + 1);
             window.setTimeout(() => {
                 flag = true;
             },1500)
-        }else if (scroll < 100 && flag == true && now_num > 1){
+        }else if (scroll < 100 && flag == true && now_num > 0){
             console.log(scroll)
             flag = false;
             sr(now_num - 1);

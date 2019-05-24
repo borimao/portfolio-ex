@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>新堀真雄のポートフォリオ</title>
     <link rel="stylesheet" href="./demo.css">
     <script src="./demo.js"></script>
     <base target="_blank">
@@ -13,13 +13,26 @@
     <div class="up"></div>
     <div class="center"></div>
     <div class="down"></div>
+    <div class="parallax p_0"></div>
     <div class="main">
-        <div class="cover c_1">
-            <div class="in_cover1 on">
+        <div class="cover c_0">
+            <div class="in_cover0 on">
                 <section>
-                    <h1>ぽーとふぉりお</h1>
+                    <h1>Mao's<br>Portforio</h1>
                 </section>
-                <button onclick="sr(2)">↓</button>
+                <button onclick="sr(1)"><span></span><span class="span2"></span><span class="span3"></span></button>
+            </div>
+            <div class="in_cover1">
+                <section>
+                    <header>PROFILE</header>
+                    <div class="prof">
+                        <img src="./IMG_7228 2.PNG" alt="">
+                        <h2 class="p_name">新堀 真雄</h2>
+                        <p class="p_rubi">nibori mao   </p>
+                        <p class="p_desc">神奈川工科大学 情報学部 情報工学科。研究室でWebアプリケーション開発をする中、フロントエンドに興味を持ち、現在はフロントエンドエンジニアを目指し勉強中です。好きなことはバイクに乗ることです。</p>
+                    </div>
+                </section>
+                <button onclick="sr(2)"><span></span><span class="span2"></span><span class="span3"></span></button>
             </div>
             <div class="in_cover2">
                 <section>
@@ -82,7 +95,8 @@
                     </div>
                     <a onclick="CloseWork()" href="javascript:void(0)" class="close_area"></a>
                 </div>
-                <button onclick="sr(3)">↓</button>
+                <button onclick="sr(3)"><span></span><span class="span2"></span><span class="span3"></span></button>
+                
             </div>
             <div class="in_cover3">
                 <section>
@@ -91,7 +105,7 @@
                         <div class="s_link s_link1">
                             <div class="s_area">
                                 <h1 class="s_name">HTML/JS/CSS</h1>
-                                <p class="s_time">使用期間：約1ヶ月</p>
+                                <p class="s_time">使用期間：約1年</p>
                                 <p class="s_desc">一月ほど前から学習を始め、現在ではcssはすべてscssで書いています。現時点ではscssの主な使い方を理解したものもの、完全に使いこなせるわけではないので、今後も使い続けて使いこなせるようにする予定です。</p>
                                 <p class="s_use">使用制作物：</p>
                             </div>
@@ -127,29 +141,21 @@
                         </div>
                     </div>
                 </section>
-                <button onclick="sr(4)">↓</button>
+                <button onclick="sr(4)"><span></span><span class="span2"></span><span class="span3"></span></button>
             </div>
+            
             <div class="in_cover4">
                 <section>
-                    <h1>4</h1>
-                    <button onclick="sr(5)">↓</button>
-                </section>
-            </div>
-            <div class="in_cover5">
-                <section>
-                    <h1>5</h1>
-                    <button onclick="sr(6)">↓</button>
-                </section>
-            </div>
-            <div class="in_cover6">
-                <section>
-                    <h1>6</h1>
-                    <button onclick="sr(7)">↓</button>
-                </section>
-            </div>
-            <div class="in_cover7">
-                <section>
-                    <h1>7</h1>
+                    <header>OTHER</header>
+                    <div class="other_area">
+                        <h2>Mail</h2>
+                        <p>maonibori@gmail.com</p>
+                        <p>
+                        <a href="https://github.com/borimao?tab=repositories">GitHub</a>
+                        <a href="https://www.youtube.com/channel/UCZf__ehlCEBPop-_sldpBUQ">YouTube</a>
+                        </p>
+                    </div>
+                    <p>Thanks for watching !!</p>
                 </section>
             </div>
         </div>
@@ -157,13 +163,11 @@
 
     <div class="button_list">
         <section>
-            <button onclick="sr(1)">1</button>
-            <button onclick="sr(2)">2</button>
-            <button onclick="sr(3)">3</button>
-            <button onclick="sr(4)">4</button>
-            <button onclick="sr(5)">5</button>
-            <button onclick="sr(6)">6</button>
-            <button onclick="sr(7)">7</button>
+            <button onclick="sr(0)" class="b_0 b_on"><p>Top</p></button>
+            <button onclick="sr(1)" class="b_1"><p>Profile</p></button>
+            <button onclick="sr(2)" class="b_2"><p>Works</p></button>
+            <button onclick="sr(3)" class="b_3"><p>Skill</p></button>
+            <button onclick="sr(4)" class="b_4"><p>Other</p></button>
         </section>
     </div>
 </body>
