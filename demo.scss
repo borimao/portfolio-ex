@@ -28,7 +28,7 @@ button{
     position: fixed;
     top: 0;
     left: 0;
-    background-image: url('./5086.jpg');
+    background-image: url('./パララックス.jpg');
     background-size: 100rem;
     transition: 1.5s
 }
@@ -624,6 +624,17 @@ button{
     }
     .cover{
         top: 0;
+    }
+    .parallax{
+        height: 1000vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-image: url('./パララックス.jpg');
+        background-size: 100rem;
+        transition: 1.5s;
+        overflow: scroll;
     }
 
     .in_cover2 section .work .img_area {

@@ -7,6 +7,7 @@ var st_flag = true;
 var agent
 var chrome
 
+
 function sr(num){
     if(now_num != num){
         var cover = document.querySelector('.cover');
@@ -26,6 +27,9 @@ function sr(num){
 }
 
 window.onload = ()=>{
+    document.querySelector(".main").addEventListener("scroll", function() {
+        
+    }, false);
     agent = window.navigator.userAgent.toLowerCase();
     chrome = (agent.indexOf('chrome') !== -1) && (agent.indexOf('edge') === -1)  && (agent.indexOf('opr') === -1);
     const myMain = document.querySelector('.center');
@@ -82,12 +86,12 @@ window.onscroll = () => {
 }
 
 
-function ViwWork(){
-    const w_area = document.querySelector('.w_back');
+function ViwWork(num){
+    const w_area = document.querySelector('.w_back' + num);
     w_area.classList.add('viw_work');
 }
-function CloseWork(){
-    const w_area = document.querySelector('.w_back');
+function CloseWork(num){
+    const w_area = document.querySelector('.w_back' + num);
     w_area.classList.remove('viw_work');
 }
 
