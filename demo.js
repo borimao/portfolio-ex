@@ -29,7 +29,7 @@ function sr(num){
 window.onload = ()=>{
     document.querySelector(".main").addEventListener("scroll", function() {
         document.querySelector(".p_cover").scrollTo({
-            top: document.querySelector(".main").scrollTop * 0.35
+            top: document.querySelector(".main").scrollTop * 0.5
         })
     }, false);
     agent = window.navigator.userAgent.toLowerCase();
@@ -44,6 +44,9 @@ window.onload = ()=>{
     if(chrome == false){
         var main = document.querySelector(".main");
         main.classList.add('m_scroll');
+        var p_cover = document.querySelector(".p_cover");
+        console.log(p_cover)
+        p_cover.classList.add('p_scroll');
         var b_list = document.querySelector(".button_list");
         b_list.classList.add('delete');
         var up = document.querySelector('.up');

@@ -55,19 +55,19 @@ button {
 }
 
 .p_cover .p_1 {
-  top: -35vh;
+  top: -50vh;
 }
 
 .p_cover .p_2 {
-  top: -70vh;
+  top: -100vh;
 }
 
 .p_cover .p_3 {
-  top: -105vh;
+  top: -150vh;
 }
 
 .p_cover .p_4 {
-  top: -140vh;
+  top: -200vh;
 }
 
 .p_cover::-webkit-scrollbar {
@@ -896,6 +896,10 @@ button {
   display: none;
 }
 
+.p_scroll {
+  overflow: scroll;
+}
+
 .delete {
   display: none;
 }
@@ -918,18 +922,6 @@ button {
   }
   .cover {
     top: 0;
-  }
-  .parallax {
-    height: 1000vh;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-image: url("./パララックス.jpg");
-    background-size: 100rem;
-    -webkit-transition: 1.5s;
-    transition: 1.5s;
-    overflow: scroll;
   }
   .in_cover2 section .work .img_area {
     width: calc(100% - 20%);

@@ -40,7 +40,7 @@ button{
     }
     @for $num from 0 to 5 {
         .p_#{$num} {
-            top: -35vh * $num
+            top: -50vh * $num
         }
     }
 }
@@ -660,6 +660,9 @@ button{
         display: none;
     }
 }
+.p_scroll {
+    overflow: scroll;
+}
 .delete{
     display: none;
 }
@@ -682,17 +685,6 @@ button{
     }
     .cover{
         top: 0;
-    }
-    .parallax{
-        height: 1000vh;
-        width: 100vw;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-image: url('./パララックス.jpg');
-        background-size: 100rem;
-        transition: 1.5s;
-        overflow: scroll;
     }
 
     .in_cover2 section .work .img_area {
