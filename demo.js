@@ -28,7 +28,9 @@ function sr(num){
 
 window.onload = ()=>{
     document.querySelector(".main").addEventListener("scroll", function() {
-        
+        document.querySelector(".p_cover").scrollTo({
+            top: document.querySelector(".main").scrollTop * 0.35
+        })
     }, false);
     agent = window.navigator.userAgent.toLowerCase();
     chrome = (agent.indexOf('chrome') !== -1) && (agent.indexOf('edge') === -1)  && (agent.indexOf('opr') === -1);

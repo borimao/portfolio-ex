@@ -22,21 +22,33 @@ button{
     padding: 0;
     appearance: none;
 }
-.parallax{
-    height: 1000vh;
+.p_cover{
+    height: 100vh;
     width: 100vw;
     position: fixed;
     top: 0;
-    left: 0;
-    background-image: url('./パララックス.jpg');
-    background-size: 100rem;
-    transition: 1.5s
-}
-@for $num from 0 to 5 {
-    .p_#{$num} {
-        top: -35vh * $num
+    left: 0; 
+    .parallax{
+        height: 1000vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url('./パララックス.jpg');
+        background-size: 100rem;
+        transition: 1.5s
+    }
+    @for $num from 0 to 5 {
+        .p_#{$num} {
+            top: -35vh * $num
+        }
     }
 }
+.p_cover::-webkit-scrollbar {
+    display: none;
+}
+
+
 
 .main{
     height: 100vh;
@@ -257,7 +269,7 @@ button{
                     min-width: 100%;
                     min-height: 100%;
                     width: auto;
-                    height: auto;
+                    height: 100%;
                     background-size: cover;
                     overflow: hidden;
                 }
@@ -267,7 +279,7 @@ button{
                     bottom: 0;
                     width: 100%;
                     height: 100%;
-                    background-color: rgba(0, 0, 0, 0.4);
+                    background-color: rgba(0, 0, 0, 0.6);
                 }
             }
             .nomal_back{
@@ -328,12 +340,26 @@ button{
                             top: 0;
                             left: 0;
                         }
+                        img {
+                            position: absolute;
+                            right: 0;
+                            bottom: 0;
+                            min-width: 100%;
+                            min-height: 100%;
+                            width: 100%;
+                            height: 100%;
+                            background-size: cover;
+                            overflow: hidden;
+                        }
                     }
                     .w-title{
                         width: 100%;
                         height: 15rem;
                         line-height: 15rem;
                         font-size: 5rem;
+                        span{
+                            color: greenyellow;
+                        }
                     }
                 }
                 .desc{
@@ -341,10 +367,32 @@ button{
                     height: calc(100%);
                     margin: 0 ;
                     box-shadow:0px 0px 8px 3px #ccc inset;
-                    justify-content: left;
-                    align-items: unset;
+                    display: inline;
+                    text-align: left;
                     overflow: scroll;
-                    -webkit-overflow-scrolling: touch
+                    -webkit-overflow-scrolling: touch;
+                    .d_text{
+                        margin: 1rem;
+                    }
+                    .links {
+                        font-size: 2.5rem;
+                        margin: 1rem;
+                        a{
+                            text-decoration: none;
+                            background-color: #fff;
+                            color: #000;
+                            border: #000 solid 0.1rem;
+                            font-size: 1.5rem;
+                            font-weight: bold;
+                            padding: 0.5rem;
+                            border-radius: 50px;
+                        }
+                    }
+                    .used {
+                        margin: 1rem;
+                        color: rgb(110, 110, 110);
+                        font-size: 1.2rem;
+                    }
                 }
                 ::-webkit-scrollbar {
                     -webkit-appearance: none;
@@ -356,17 +404,6 @@ button{
                     box-shadow: 0 0 1px rgba(255,255,255,.5);
                 }
             }
-            .close_link{
-                position: absolute;
-                top: 0;
-                right: 0;
-                width: 5rem;
-                height: 5rem;
-                line-height: 5rem;
-                text-decoration: none;
-                background-color: rgba(0, 0, 0, 0.6);
-                color: #fff;
-            }
         }
         .close_area{
             position: absolute;
@@ -377,11 +414,26 @@ button{
             background-color: rgba(0, 0, 0, 0.6);
             z-index: 0;
         }
+        .close_link{
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            width: 5rem;
+            height: 5rem;
+            line-height: 5rem;
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-align: center;
+            pointer-events: auto;
+            z-index: 1;
+        }
     }
     .viw_work{
         left: 0;
     }
 }
+
 .in_cover3{
     section{
         header {
@@ -411,7 +463,6 @@ button{
                     transition: 0.5s;
                     .s_name {
                         font-size: 7rem;
-                        text-decoration: underline;
                     }
                     .s_time {
                         margin-bottom: 2rem;
@@ -548,11 +599,12 @@ button{
     }
 }
 .work:hover > .img_area > .img1{
-    opacity: 0.2;
+    opacity: 0;
 }
 
 .work:hover > .img_area > .img1 ~ a{
     background: rgba(0, 0, 0, 0.4);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
 }
 
 .button_list{
@@ -621,6 +673,12 @@ button{
     }
     .main{
         overflow: scroll;
+    }
+    .p_cover {
+        overflow: scroll
+    }
+    .parallax{
+        top: 0;
     }
     .cover{
         top: 0;

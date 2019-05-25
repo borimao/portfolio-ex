@@ -30,10 +30,18 @@ button {
           appearance: none;
 }
 
-.parallax {
-  height: 1000vh;
+.p_cover {
+  height: 100vh;
   width: 100vw;
   position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.p_cover .parallax {
+  height: 1000vh;
+  width: 100vw;
+  position: absolute;
   top: 0;
   left: 0;
   background-image: url("./パララックス.jpg");
@@ -42,24 +50,28 @@ button {
   transition: 1.5s;
 }
 
-.p_0 {
+.p_cover .p_0 {
   top: 0vh;
 }
 
-.p_1 {
+.p_cover .p_1 {
   top: -35vh;
 }
 
-.p_2 {
+.p_cover .p_2 {
   top: -70vh;
 }
 
-.p_3 {
+.p_cover .p_3 {
   top: -105vh;
 }
 
-.p_4 {
+.p_cover .p_4 {
   top: -140vh;
+}
+
+.p_cover::-webkit-scrollbar {
+  display: none;
 }
 
 .main {
@@ -380,7 +392,7 @@ button {
   min-width: 100%;
   min-height: 100%;
   width: auto;
-  height: auto;
+  height: 100%;
   background-size: cover;
   overflow: hidden;
 }
@@ -391,7 +403,7 @@ button {
   bottom: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .in_cover2 section .work .nomal_back {
@@ -464,11 +476,27 @@ button {
   left: 0;
 }
 
+.in_cover2 .w_back .w_area .content .videos .frame-area img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  overflow: hidden;
+}
+
 .in_cover2 .w_back .w_area .content .videos .w-title {
   width: 100%;
   height: 15rem;
   line-height: 15rem;
   font-size: 5rem;
+}
+
+.in_cover2 .w_back .w_area .content .videos .w-title span {
+  color: greenyellow;
 }
 
 .in_cover2 .w_back .w_area .content .desc {
@@ -477,14 +505,36 @@ button {
   margin: 0;
   -webkit-box-shadow: 0px 0px 8px 3px #ccc inset;
           box-shadow: 0px 0px 8px 3px #ccc inset;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
-  -webkit-box-align: unset;
-      -ms-flex-align: unset;
-          align-items: unset;
+  display: inline;
+  text-align: left;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
+}
+
+.in_cover2 .w_back .w_area .content .desc .d_text {
+  margin: 1rem;
+}
+
+.in_cover2 .w_back .w_area .content .desc .links {
+  font-size: 2.5rem;
+  margin: 1rem;
+}
+
+.in_cover2 .w_back .w_area .content .desc .links a {
+  text-decoration: none;
+  background-color: #fff;
+  color: #000;
+  border: #000 solid 0.1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 50px;
+}
+
+.in_cover2 .w_back .w_area .content .desc .used {
+  margin: 1rem;
+  color: #6e6e6e;
+  font-size: 1.2rem;
 }
 
 .in_cover2 .w_back .w_area .content ::-webkit-scrollbar {
@@ -499,18 +549,6 @@ button {
           box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
-.in_cover2 .w_back .w_area .close_link {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 5rem;
-  height: 5rem;
-  line-height: 5rem;
-  text-decoration: none;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-}
-
 .in_cover2 .w_back .close_area {
   position: absolute;
   top: 0;
@@ -519,6 +557,21 @@ button {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 0;
+}
+
+.in_cover2 .w_back .close_link {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+  pointer-events: auto;
+  z-index: 1;
 }
 
 .in_cover2 .viw_work {
@@ -562,7 +615,6 @@ button {
 
 .in_cover3 section .skils_area .s_link .s_area .s_name {
   font-size: 7rem;
-  text-decoration: underline;
 }
 
 .in_cover3 section .skils_area .s_link .s_area .s_time {
@@ -767,11 +819,13 @@ button {
 }
 
 .work:hover > .img_area > .img1 {
-  opacity: 0.2;
+  opacity: 0;
 }
 
 .work:hover > .img_area > .img1 ~ a {
   background: rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
 }
 
 .button_list {
@@ -855,6 +909,12 @@ button {
   }
   .main {
     overflow: scroll;
+  }
+  .p_cover {
+    overflow: scroll;
+  }
+  .parallax {
+    top: 0;
   }
   .cover {
     top: 0;
