@@ -45,7 +45,6 @@ window.onload = ()=>{
         var main = document.querySelector(".main");
         main.classList.add('m_scroll');
         var p_cover = document.querySelector(".p_cover");
-        console.log(p_cover)
         p_cover.classList.add('p_scroll');
         var b_list = document.querySelector(".button_list");
         b_list.classList.add('delete');

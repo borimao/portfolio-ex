@@ -374,7 +374,7 @@ button {
 }
 
 .in_cover2 section .work .back_image {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -395,6 +395,8 @@ button {
   height: 100%;
   background-size: cover;
   overflow: hidden;
+  -webkit-filter: blur(8px);
+          filter: blur(8px);
 }
 
 .in_cover2 section .work .back_image .shadow {
@@ -403,7 +405,7 @@ button {
   bottom: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .in_cover2 section .work .nomal_back {
@@ -797,9 +799,8 @@ button {
   margin: 1rem;
 }
 
-.in_cover4 section p {
-  font-size: 2.5rem;
-  text-align: center;
+.in_cover4 section .other_area .thankyou {
+  margin-top: 4rem;
 }
 
 #img_area1:hover + #b_image1 {
@@ -823,7 +824,7 @@ button {
 }
 
 .work:hover > .img_area > .img1 ~ a {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.2);
   -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
           box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
 }
